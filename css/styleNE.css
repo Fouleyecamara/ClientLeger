@@ -1,0 +1,102 @@
+body {
+    position: relative; /* Assurez-vous que la position est relative pour les éléments enfants positionnés absolument */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+   
+  header {
+    width: 100%;
+    background-color: #b0a3a3;
+    display: flex;
+    justify-content: center;
+  
+    top: 0;
+    z-index: 1000; /* Ajustez la valeur en fonction de vos besoins */
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 60px; /* Ajustez la valeur selon la hauteur de votre header */
+    box-sizing: border-box;
+  }
+/* Pour tous les boutons */
+button {
+    border-radius: 8px; /* Ajustez la valeur selon vos préférences */
+    padding: 10px 20px; /* Ajustez le rembourrage selon vos préférences */
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprimez la bordure par défaut */
+    cursor: pointer; /* Ajoutez un curseur pointeur au survol */
+}
+
+/* Si vous souhaitez spécifier un style différent pour un bouton spécifique, utilisez une classe */
+.rounded-button {
+    border-radius: 20px; /* Ajustez la valeur selon vos préférences */
+    /* Ajoutez d'autres styles si nécessaire */
+}
+
+/* Ajoutez d'autres styles pour le reste de la page si nécessaire */
+
+h2 {
+    text-align: center;
+}
+
+.reserve {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.neige {
+    width: 400px; /* Ajustez la largeur selon vos besoins */
+    border: 1px solid #978e8e;
+    border-radius: 8px;
+    margin: 15px;
+    background-color: #a1b2b6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.9; /* Ajustez la valeur d'opacité selon vos préférences */
+}
+
+
+.carousel {
+    margin-top: 15px;
+    width: 100%; /* Largeur fixe pour le carrousel */
+}
+
+.carousel-inner img {
+    width: 100px; /* Les images occupent 100% de la largeur du carrousel */
+    height: 250px; /* Hauteur fixe pour les images du carrousel */
+    object-fit: cover; /* Assurez-vous que les images couvrent entièrement la zone */
+    border-radius: 8px;
+}
+
+
+
+.carousel-control-prev, .carousel-control-next {
+    width: 3%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer-content {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
