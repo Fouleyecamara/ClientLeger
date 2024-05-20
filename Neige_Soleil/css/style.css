@@ -1,0 +1,273 @@
+/********* POUR TOUTES LES PAGES ********/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* pour s'assurer que le contenu occupe au moins toute la hauteur de l'écran */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    background-color: #aeaaaa;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    z-index: 1000;
+}
+
+.buttons {
+    display: flex;
+}
+
+header button {
+    border-radius: 8px;
+    /* Ajustez la valeur selon vos préférences */
+    padding: 10px 20px;
+    background-color: #cbcbcb;
+    /* Couleur du bouton, vous pouvez changer cela */
+    color: #fff;
+    /* Couleur du texte du bouton, vous pouvez changer cela */
+    cursor: pointer;
+    border: none;
+    margin-right: 10px;
+}
+
+button {
+    border-radius: 8px;
+    /* Ajustez la valeur selon vos préférences */
+    padding: 10px 20px;
+    background-color: #cbcbcb;
+    /* Couleur du bouton, vous pouvez changer cela */
+    color: #fff;
+    /* Couleur du texte du bouton, vous pouvez changer cela */
+    cursor: pointer;
+    border: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 60px;
+    /* Ajustez la valeur selon la hauteur de votre header */
+    box-sizing: border-box;
+}
+
+.welcome-message {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-message p {
+    font-size: 20px;
+}
+
+.welcome-message h1 {
+    font-family: Chalkduster;
+    font-size: 40px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    /* Aligne les images verticalement */
+    align-items: center;
+    /* Centre les images horizontalement */
+    gap: 200px;
+}
+
+.image-container img {
+    border: 5px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #aeaaaa;
+    color: white;
+    box-sizing: border-box;
+    padding: 10px 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+/******** INSERT_LOGEMENT.PHP ***********/
+
+.insert_logement {
+    display: flex;
+    justify-content: space-around;
+    /* Pour espacer les deux divs */
+    align-items: center;
+    flex-wrap: wrap;
+    /* Permet aux divs d'aller à la ligne si l'espace est insuffisant */
+}
+
+.insert {
+    width: 500px;
+    /* Ajustez la largeur selon vos besoins */
+    border: 1px solid #ddd;
+    /* Bordure */
+    border-radius: 10px;
+    /* Coins arrondis */
+    padding: 20px;
+    /* Ajout d'un espace intérieur */
+    margin: 10px;
+    /* Marge extérieure */
+    box-sizing: border-box;
+}
+
+form {
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 2px;
+    height: 10px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+
+/* Styles pour les zones de texte (input et textarea) */
+
+input,
+textarea {
+    width: 100%;
+    padding: 6px;
+    font-size: 14px;
+    /* Ajustez la taille de police selon vos besoins */
+}
+
+
+/* Si vous voulez rendre spécifiquement les textarea plus petites */
+
+textarea {
+    height: 100px;
+    /* Ajustez la hauteur selon vos besoins */
+}
+
+.ajout {
+    padding: 10px;
+    width: 300px;
+    background-color: #48aecd;
+    /* Couleur du bouton, vous pouvez changer cela */
+    color: #fff;
+    /* Couleur du texte du bouton, vous pouvez changer cela */
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin-top: 80px;
+}
+
+button.ajout {
+    width: 100%;
+    /* Prend 100% de la largeur disponible */
+    margin-top: 20px;
+}
+
+.insert_logement>div {
+    margin-bottom: 20px;
+}
+
+
+/******** SELECT_LOGEMENT.PHP *************/
+
+.select_logement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#carouselExample {
+    max-width: 400px;
+    margin-bottom: 20px;
+    border: 3px solid #ccc;
+    /* Couleur et épaisseur de la bordure */
+    border-radius: 5px;
+    /* Arrondir les coins de la bordure */
+    overflow: hidden;
+    /* Masquer le contenu qui dépasse de la boîte */
+}
+
+.carousel-inner {
+    width: 100%;
+    /* Assurez-vous que les images du carrousel remplissent la boîte */
+}
+
+.carousel-item img {
+    width: 100%;
+    /* Faites en sorte que les images occupent 100% de la largeur de la boîte */
+    height: auto;
+    /* Ajustez automatiquement la hauteur pour conserver les proportions d'origine */
+}
+
+.select_logement div {
+    margin-bottom: 10px;
+}
+
+.select_logement p {
+    margin: 0;
+}
+
+.select_logement strong {
+    color: #ff9100eb;
+    /* Changez la couleur selon vos préférences */
+}
+
+.select {
+    border: 3px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/******** PAGES D'INSCRIPTION *********/
+
+.inscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulaire {
+    width: 500px;
+    /* Ajustez la largeur selon vos besoins */
+    border: 5px solid #c8c3c3;
+    /* Bordure */
+    border-radius: 10px;
+    /* Coins arrondis */
+    padding: 20px;
+    /* Ajout d'un espace intérieur */
+    margin: 10px;
+    /* Marge extérieure */
+    box-sizing: border-box;
+}
+
+
+/****** RECHERCHE.PHP **************/

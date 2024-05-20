@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* pour s'assurer que le contenu occupe au moins toute la hauteur de l'écran */
+   
+}
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+   
+  header {
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+  
+    top: 0;
+    z-index: 1000; /* Ajustez la valeur en fonction de vos besoins */
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 60px; /* Ajustez la valeur selon la hauteur de votre header */
+    box-sizing: border-box;
+  }
+  
+
+.form_recherche {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_recherche input[type="text"],
+.form_recherche input[type="date"],
+.form_recherche input[type="submit"] {
+    width: 200px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.form_recherche input[type="submit"] {
+    background-color: #edcba0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.annonces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.recherche {
+    width: 400px; /* Ajustez la largeur selon vos besoins */
+    border: 1px solid #eee1e1;
+    border-radius: 8px;
+    margin: 15px;
+    background-color: #f0ecd7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.9; /* Ajustez la valeur d'opacité selon vos préférences */
+}
+
+
+.carousel {
+    margin-top: 15px;
+    width: 100%; /* Largeur fixe pour le carrousel */
+}
+
+.carousel-inner img {
+    width: 100px; /* Les images occupent 100% de la largeur du carrousel */
+    height: 250px; /* Hauteur fixe pour les images du carrousel */
+    object-fit: cover; /* Assurez-vous que les images couvrent entièrement la zone */
+    border-radius: 8px;
+}
+
+
+
+
+.carousel-control-prev, .carousel-control-next {
+    width: 3%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+button {
+    border-radius: 8px; /* Ajustez la valeur selon vos préférences */
+    padding: 10px 20px; /* Ajustez le rembourrage selon vos préférences */
+    background-color: #edcba0;; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprimez la bordure par défaut */
+    cursor: pointer; /* Ajoutez un curseur pointeur au survol */
+}
+
+/* Si vous souhaitez spécifier un style différent pour un bouton spécifique, utilisez une classe */
+.rounded-button {
+    border-radius: 20px; /* Ajustez la valeur selon vos préférences */
+    /* Ajoutez d'autres styles si nécessaire */
+}
