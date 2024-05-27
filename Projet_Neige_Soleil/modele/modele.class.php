@@ -243,14 +243,14 @@ public function selectLogement($email) {
                 $requete = "insert into proprietaire values (null , :nom, :prenom, :email, :telephone, :mdp, :roles);";
         
                 // Hachage du mot de passe
-                $hashedPassword = password_hash($tab['mdp'], PASSWORD_DEFAULT);
+                //$hashedPassword = password_hash($tab['mdp'], PASSWORD_DEFAULT);
         
                 $donnees = array(
                     ":nom" => $tab['nom'],
                     ":prenom" => $tab['prenom'],
                     ":email" => $tab['email'],
                     ":telephone" => $tab['telephone'],
-                    ":mdp" => $hashedPassword, // Utilisation du mot de passe haché
+                    ":mdp" => $tab['mdp'], //$hashedPassword, // Utilisation du mot de passe haché
                     ":roles" => $tab['roles'],
                 );
         
@@ -260,13 +260,13 @@ public function selectLogement($email) {
 
             public function updateProprio ($tab){
                 $requete ="update proprietaire set nom=:nom, prenom=:prenom ,email=:email, telephone=:telephone, mdp=:mdp , roles=:roles  where email=:email";
-                $hashedPassword = password_hash($tab['mdp'], PASSWORD_DEFAULT);
+               // $hashedPassword = password_hash($tab['mdp'], PASSWORD_DEFAULT);
                 $donnees = array(
                     ":nom" => $tab['nom'],
                     ":prenom" => $tab['prenom'],
                     ":email" => $tab['email'],
                     ":telephone" => $tab['telephone'],
-                    ":mdp" => $hashedPassword, // Utilisation du mot de passe haché
+                    ":mdp" => $tab['mdp'], //$hashedPassword, // Utilisation du mot de passe haché
                     ":roles" => $tab['roles'],
                 );
         
@@ -279,14 +279,14 @@ public function selectLogement($email) {
                 $requete = "insert into client values (null , :nom, :prenom, :email, :telephone, :mdp, :roles);";
         
                 // Hachage du mot de passe
-                $hashedPassword = password_hash($tab['mdp'], PASSWORD_DEFAULT);
+               // $hashedPassword = password_hash($tab['mdp'], PASSWORD_DEFAULT);
         
                 $donnees = array(
                     ":nom" => $tab['nom'],
                     ":prenom" => $tab['prenom'],
                     ":email" => $tab['email'],
                     ":telephone" => $tab['telephone'],
-                    ":mdp" => $hashedPassword, // Utilisation du mot de passe haché
+                    ":mdp" => $tab['mdp'], //$hashedPassword, // Utilisation du mot de passe haché
                     ":roles" => $tab['roles'],
                 );
         
@@ -298,13 +298,13 @@ public function selectLogement($email) {
                 public function updateClient ($tab){
 
                     $requete ="update client set nom=:nom, prenom=:prenom ,email=:email, telephone=:telephone, mdp=:mdp , roles=:roles  where email=:email";
-                    $hashedPassword = password_hash($tab['mdp'], PASSWORD_DEFAULT);
+                   // $hashedPassword = password_hash($tab['mdp'], PASSWORD_DEFAULT);
                     $donnees = array(
                         ":nom" => $tab['nom'],
                         ":prenom" => $tab['prenom'],
                         ":email" => $tab['email'],
                         ":telephone" => $tab['telephone'],
-                        ":mdp" => $hashedPassword, // Utilisation du mot de passe haché
+                        ":mdp" => $tab['mdp'],//$hashedPassword, // Utilisation du mot de passe haché
                         ":roles" => $tab['roles']
 
                     );
@@ -321,20 +321,22 @@ $resultat = $select->execute ($donnees);
 
             public function connexionUtilisateur($email, $mdp) {
                 try {
-                    $requete = "SELECT * FROM utilisateur WHERE email = :email";
+                    $requete = "SELECT * FROM utilisateur WHERE email = :email and mdp =:mdp;";
                     $select = $this->unPDO->prepare($requete);
-                    $select->bindParam(':email', $email, PDO::PARAM_STR);
+                    $select->bindValue(':email', $email, PDO::PARAM_STR);
+                    $select->bindValue(':mdp', $mdp, PDO::PARAM_STR);
                     $select->execute();
                     $utilisateur = $select->fetch(PDO::FETCH_ASSOC);
-            
+                    var_dump($utilisateur);
                     // Vérifiez si l'utilisateur existe et si le mot de passe est correct
-                    if ($utilisateur && password_verify($mdp, $utilisateur['mdp'])) {
+                   /* if ($utilisateur && password_verify($mdp, $utilisateur['mdp'])) {
                         // Connexion réussie
                         return true;
                     } else {
                         // Mot de passe incorrect ou utilisateur inexistant
                         return false;
-                    }
+                    }*/
+                    return true;
                 } catch (PDOException $exp) {
                     echo "<br> Erreur de connexion à la base de données";
                     return false;

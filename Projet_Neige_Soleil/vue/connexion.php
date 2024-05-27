@@ -8,7 +8,8 @@ require_once("../controlleur/controlleur.class.php");
 
 $unControleur = new Controleur(); 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (isset($_POST['email'])) {
+  
     $email = $_POST['email'];
     $mdp = $_POST['mdp'];
     $resultat = $unControleur->connexionUtilisateur($email, $mdp);

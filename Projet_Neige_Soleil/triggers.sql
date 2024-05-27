@@ -1,4 +1,4 @@
-     /*Trigger qui permet de faire des insert dans ses table héritante**/
+/*Trigger qui permet de faire des insert dans ses table héritante**/
 
 
 DROP TRIGGER IF EXISTS insert_client;

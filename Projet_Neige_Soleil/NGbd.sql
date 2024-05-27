@@ -1,6 +1,6 @@
-drop database neigesoleil;
-create database neigesoleil;
-use neigesoleil;
+drop database neige_soleil2;
+create database neige_soleil2;
+use neige_soleil2;
 
 
 CREATE TABLE utilisateur(
